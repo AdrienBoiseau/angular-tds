@@ -1,4 +1,4 @@
-angular.module("FirstApp").controller("MainController",function(){
+angular.module("NoteApp").controller("NoteController",function(){
     var self=this;
     this.message="Hello";
     this.getMsg=function() {

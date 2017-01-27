@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="FirstApp">
+<html lang="en" data-ng-app="NoteApp">
 <head>
     <meta charset="UTF-8">
-    <title>First Angular</title>
+    <title>TD1</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="app.js"></script>
-    <script src="mainController.js"></script>
+    <script src="NoteApp.js"></script>
+    <script src="NoteController.js"></script>
 </head>
-<body data-ng-controller="MainController as mainCtrl">
-{{2+7}}
-{{mainCtrl.message}}
+<body data-ng-controller="NoteController as notectrl">
+<form>
+<label>Note</label><br/>
+<textarea rows="5" cols="50">
+</textarea> <br/>
+<input type="button" id="enregistrer" value="Enregistrer"/>
+<input type="reset" id="effacer" value="Effacer"/>
+</form>
 </body>
 </html>
