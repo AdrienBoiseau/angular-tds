@@ -1,8 +1,8 @@
 angular.module("NoteApp").controller("NoteController",function(){
-    var self=this;
-    this.message="Hello";
-    this.getMsg=function() {
-        return self.message;
+    this.messageNote="";
+
+    this.count=function() {
+        var compteur = 100 - this.messageNote.length;
     };
 });
 

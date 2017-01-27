@@ -7,13 +7,22 @@
     <script src="NoteApp.js"></script>
     <script src="NoteController.js"></script>
 </head>
-<body data-ng-controller="NoteController as notectrl">
+
+
+
 <form>
 <label>Note</label><br/>
-<textarea rows="5" cols="50">
-</textarea> <br/>
+    <textarea data-ng-change="updateInfo()" name="message" id="message" data-ng-model="message" cols="40" rows="5" class="form-control ng-pristine ng-valid ng-valid-maxlength ng-touched" maxlength="100" style="">
+    </textarea><br/>
+    <script>
+        var messageNote = $("#message").val();
+    </script>
+    <span data-ng-controller="NoteController as notectrl">
+        {{notectrl.compteur}}
+    </span>
 <input type="button" id="enregistrer" value="Enregistrer"/>
 <input type="reset" id="effacer" value="Effacer"/>
 </form>
+
 </body>
 </html>
