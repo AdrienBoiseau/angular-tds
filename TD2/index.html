@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Services Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
+    <script src="servicesApp.js"></script>
+    <script src="servicesController.js"></script>
 </head>
-<body>
-
+<body data-ng-app="ServicesApp" data-ng-controller="ServicesController as mainCtrl">
+<h1>Services</h1>
+<span>Choisissez les éléments à inclure</span>
+<div>
+    <ul>
+        <li>
+            Web Development <span class="ng-binding">$300.00</span>
+        </li>
+        <li>
+            Design <span class="ng-binding">$400.00</span>
+        </li>
+        <li>
+            Integration <span class="ng-binding">$250.00</span>
+        </li>
+        <li>
+            Formation <span class="ng-binding">$220.00</span>
+        </li>
+    </ul>
+    <div>
+      <p>Total :</p>
+    </div>
+<div>
 </body>
 </html>
