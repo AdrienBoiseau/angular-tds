@@ -1,1 +1,1 @@
-angular.module("NoteApp",[]);
+var NoteApp = angular.module('NoteApp',['ngCookies']);

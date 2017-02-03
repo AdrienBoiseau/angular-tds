@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="NoteApp">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>TD1</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="NoteApp.js"></script>
-    <script src="NoteController.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
+    <script src="noteApp.js"></script>
+    <script src="noteController.js"></script>
 </head>
-
-
-
-<form>
-<label>Note</label><br/>
-    <textarea data-ng-change="updateInfo()" name="message" id="message" data-ng-model="message" cols="40" rows="5" class="form-control ng-pristine ng-valid ng-valid-maxlength ng-touched" maxlength="100" style="">
-    </textarea><br/>
-    <script>
-        var messageNote = $("#message").val();
-    </script>
-    <span data-ng-controller="NoteController as notectrl">
-        {{notectrl.compteur}}
-    </span>
-<input type="button" id="enregistrer" value="Enregistrer"/>
-<input type="reset" id="effacer" value="Effacer"/>
-</form>
-
+<body data-ng-app="NoteApp" data-ng-controller="NoteController as mainCtrl">
+<center>
+<div>
+    <div ><h1>Application Note : </h1></div>
+    <div>
+        <div>
+            <textarea data-ng-change=" mainCtrl.info='Note modifiee'" data-ng-model="mainCtrl.messageNote" name="messageNote" id="messageNote" cols="50" rows="10" class="form-control ng-valid ng-valid-maxlength ng-dirty ng-touched" maxlength="100"></textarea>
+            </br>
+            <input type="button" data-ng-click="mainCtrl.save()" id="enregistrer" value="Enregistrer"/>
+            <input type="button" data-ng-click="mainCtrl.reset()" id="effacer" value="Effacer"/>
+            <div  data-ng-class="mainCtrl.status" role="alert">
+                Nombre de caractère(s) restant :
+                <span data-ng-bind="mainCtrl.count()" class="ng-binding">
+                   100
+               </span>
+            </div>
+            <div data-ng-class="{'alert-warning': mainCtrl.count()<50 && mainCtrl.info!='Note sauvegardée','alert-danger':mainCtrl.count()<20 && mainCtrl.info!='Note sauvegardée','alert-success':mainCtrl.info=='Note sauvegardée'}" class="alert alert-dismissible alert-info ng-hide" role="alert" data-ng-show="mainCtrl.info">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" data-ng-click="mainCtrl.info=''"><span aria-hidden="true">×</span></button>
+                <span  data-ng-bind="mainCtrl.info" class="ng-binding"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
 </body>
 </html>
