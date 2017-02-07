@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <title>Services Application</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
-    <script src="servicesApp.js"></script>
-    <script src="servicesController.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="css.css" />
+    <script src="ServicesApp.js"></script>
+    <script src="ServicesController.js"></script>
 </head>
-<body data-ng-app="ServicesApp" data-ng-controller="ServicesController as mainCtrl">
-<h1>Services</h1>
-<span>Choisissez les éléments à inclure</span>
-<div>
-    <ul>
-        <li>
-            Web Development <span class="ng-binding">$300.00</span>
-        </li>
-        <li>
-            Design <span class="ng-binding">$400.00</span>
-        </li>
-        <li>
-            Integration <span class="ng-binding">$250.00</span>
-        </li>
-        <li>
-            Formation <span class="ng-binding">$220.00</span>
-        </li>
-    </ul>
-    <div>
-      <p>Total :</p>
-    </div>
-<div>
+<body data-ng-controller="ServicesController as sCtrl">
+<pre class='code-toolbar line-numbers'><code class='language-markup'>
+	<form data-ng-app="ServicesApp" ng-controller="ServicesController as sCtrl" class="img-rounded">
+
+	<h1>Services</h1>
+	<div class="alert alert-info">
+		<span>Choisissez les éléments à inclure</span>
+		<p>
+			<ng-pluralize count="sCtrl.count" when="{0:'Aucun service sélectionné',
+											1:'1 service sélectionné',
+											'other':'{} services sélectionnés'}"></ng-pluralize>
+		</p>
+	</div>
+	<ul>
+		<li ng-repeat="service in sCtrl.services" ng-click="sCtrl.toggleActive(service)" ng-class="{active:service.active}">
+			{{service.name}} <span>{{service.price | currency}}</span>
+		</li>
+	</ul>
+
+	<div class="total">
+		Total: <span>{{sCtrl.total() | currency}}</span>
+	</div>
+	<div>
+		<div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" aria-label="..." ng-model="sCtrl.ckPromo" ng-click="sCtrl.applyCode()">
+      </span>
+			<input type="text" class="form-control" aria-label="..." ng-model="sCtrl.codePromo" placeholder="Code promo" ng-keyup="sCtrl.applyCode()">
+		</div>
+	</div>
+	<div class="total" ng-show="sCtrl.ckPromo&&sCtrl.codePromo">
+		Remise :<span ng-if="sCtrl.IsNumeric(sCtrl.remise)">{{sCtrl.remise | currency}}</span><span ng-if="!sCtrl.IsNumeric(sCtrl.remise)">{{sCtrl.remise}}</span><br>
+		Total avec remise :<span>{{sCtrl.total()-sCtrl.remise | currency}}</span>
+	</div>
+</form></code></pre>
 </body>
 </html>

@@ -1,1 +1,1 @@
-var ServicesApp = angular.module('ServicesApp',['ngCookies']);
+angular.module('ServicesApp',[]);

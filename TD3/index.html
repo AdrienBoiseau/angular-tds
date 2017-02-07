@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>
+    <script src="listesApp.js"></script>
+    <script src="listesController.js"></script>
+    <style type="text/css">
+        select {
+            font-family : Courier ;
+            font-size : 10px ;
+            width : 500px ;
+        }
+    </style>
+</head>
+<body data-ng-app="ListesApp" data-ng-controller="ListesController as mainCtrl">
+<h1>Sélectionnez vos produits</h1>
+<div>
+    <p>Produits disponibles :</p>
+    <FORM>
+        <SELECT name="nom" size="10" width="20px" ng>
+            <OPTION>produit1</OPTION>
+            <OPTION>produit2</OPTION>
+            <OPTION>produit3</OPTION>
+            <OPTION>produit4</OPTION>
+            <OPTION>produit5</OPTION>
+        </SELECT>
+        <input type="button" name="undroit" value =">|">
+        <input type="button" name="toutdroit" value =">>|">
+        <input type="button" name="ungaucge" value ="<|">
+        <input type="button" name="toutgauche" value ="<<|">
+        <p>Produits sélectionnés</p>
+        <SELECT name="nom" size="10" width="20px">
+            <OPTION>produit1</OPTION>
+            <OPTION>produit2</OPTION>
+            <OPTION>produit3</OPTION>
+            <OPTION>produit4</OPTION>
+            <OPTION>produit5</OPTION>
+        </SELECT>
+    </FORM>
+</div>
+{{mainCtrl.diapoItems}}
+</body>
+</html>
