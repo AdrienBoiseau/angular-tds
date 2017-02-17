@@ -1,0 +1,20 @@
+
+h2{
+    text-align: center;
+}
+
+table{
+    text-align : center;
+}
+
+.filter {
+    height: auto;
+}
+
+.filter[placeholder]{
+    font-size: 30px;
+}
+.compter{
+    text-align: center;
+    color: #246;
+}
