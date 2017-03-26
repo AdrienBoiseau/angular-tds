@@ -44,4 +44,9 @@ j'ai appris à utiliser les patrons de conception notament factory ainsi que d'u
 afin de mettre en place le routage. J'ai aussi pu apprendre à mettre en place le routage en utilisant Browserify ainsi
 que NodeJS. Les difficultés de ce TD était surtout de comprend la structure de l'application en utilisant le patron
 de conception factory et d'ensuite mettre en place le routage. Il a fallu comprendre comment chaque fichier
-interagissez entre eux. 
+interagissez entre eux.
+
+#Commit
+Concernant les commits, j'ai préférer faire peu de commit mais ajouter beaucoup de contenu dans un seul commit.
+La plupart du temps je ne réaliser qu'un commit en fin de séance une fois que j'avais bien avancer dans le TD.
+Il est pour moi inutile de commit chaque fonctionnalité réussite. 
